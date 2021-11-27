@@ -36,6 +36,20 @@ function home() {
                 leftBtnText="Custom Order"
                 rightBtnText="Existing inventory"
                 />
+                <Section
+                   title="Lowest cost solar panels in America"
+                   description="Money back garuntee"
+                   backgroundImg="solar-panel.jpg"
+                   leftBtnText="Order Now"
+                   rightBtnText="Learn More"
+                />
+             <Section
+                   title="Solar For New Roof"
+                   description="Solar roofs Costs Less Than A New Roofs Plus Solar Panels"
+                   backgroundImg="solar-roof.jpg"
+                   leftBtnText="Order Now"
+                   rightBtnText="Learn More"
+                />
             </Container>
         </div>
     )
