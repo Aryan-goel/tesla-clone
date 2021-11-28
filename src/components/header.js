@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import MenuIcon from "@mui/icons-material/Menu";
+
 function header() {
   return (
     <Container>
@@ -18,8 +19,31 @@ function header() {
         <a herf="#">Tesla Account</a>
         <CustomMenu />
       </RightMenu>
+      <BurgerNav>
+        <li>
+          <a herf="#">Existing Inventory</a>
+        </li>
+        <li>
+          <a herf="#">Used Inventory</a>
+        </li>
+        <li>
+          <a herf="#">Trade In</a>
+        </li>
+        <li>
+          <a herf="#">CyberTruck</a>
+        </li>
+        <li>
+          <a herf="#">Roadster</a>
+        </li>
+        <li>
+          <a herf="#">Semi</a>
+        </li>
+        <li>
+          <a herf="#">Charging</a>
+        </li>
+      </BurgerNav>
     </Container>
-  );
+  )
 }
 
 export default header;
@@ -29,16 +53,17 @@ const Container = styled.div`
   position: fixed;
   display: flex;
   align-items: center;
-  justify-content:space-between;
+  justify-content: space-between;
   padding: 0 20px;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
 `;
 const Menu = styled.div`
   display: flex;
   align-items: center;
-  
+
   justify-content: center;
   flex: 1;
   a {
@@ -47,19 +72,32 @@ const Menu = styled.div`
     padding: 0 10px;
     flex-wrap: nowrap;
   }
-  @media(max-width:768px){
-      display:none;
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 const RightMenu = styled.div`
-display:flex;
-align-items:center;
+  display: flex;
+  align-items: center;
   a {
     font-weight: 600;
     text-transform: uppercase;
     margin-right: 10px;
   }
 `;
-const CustomMenu=styled(MenuIcon)`
-cursor:pointer;
-`
+const CustomMenu = styled(MenuIcon)`
+  cursor: pointer;
+`;
+const BurgerNav = styled.div`
+position:fixed;
+top:0;
+bottom:0;
+right:0;
+background:white;
+width:300px;
+
+
+  
+
+
+`;
