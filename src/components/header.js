@@ -1,8 +1,10 @@
-import React from "react";
+import React,{useState}from "react";
 import styled from "styled-components";
 import MenuIcon from "@mui/icons-material/Menu";
+import ClearIcon from "@mui/icons-material/Clear";
 
-function header() {
+function Header() {
+const[burgerStatus,setBurgerStatus]=useState(false);
   return (
     <Container>
       <a>
@@ -19,7 +21,10 @@ function header() {
         <a herf="#">Tesla Account</a>
         <CustomMenu />
       </RightMenu>
-      <BurgerNav>
+      <BurgerNav show={burgerStatus}>
+        <CloseWrapper>
+        <CustomClose />
+        </CloseWrapper >
         <li>
           <a herf="#">Existing Inventory</a>
         </li>
@@ -43,10 +48,10 @@ function header() {
         </li>
       </BurgerNav>
     </Container>
-  )
+  );
 }
 
-export default header;
+export default Header;
 
 const Container = styled.div`
   min-height: 60px;
@@ -89,15 +94,35 @@ const CustomMenu = styled(MenuIcon)`
   cursor: pointer;
 `;
 const BurgerNav = styled.div`
-position:fixed;
-top:0;
-bottom:0;
-right:0;
-background:white;
-width:300px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: white;
+  width: 300px;
+  list-style: none;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+transform: ${props => props.show ? 'translateX(0)':'translateX(100%)'};
 
-
-  
-
-
+  justify-content: flex-start;
+  li {
+    padding: 15px 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    a {
+      font-weight: 600;
+    }
+  }
 `;
+
+const CustomClose = styled(ClearIcon)`
+cursor:pointer;
+`;
+
+const CloseWrapper=styled.div`
+display:flex;
+justify-content:flex-end;
+
+`
